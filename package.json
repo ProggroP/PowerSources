@@ -1,0 +1,52 @@
+{
+    "author": "Axel Kark",
+    "dependencies": {
+        "@rebble/clay": "1.0.8"
+    },
+    "keywords": [
+        "pebble-app",
+        "watchface",
+        "home-assistant",
+        "energy"
+    ],
+    "name": "powersources",
+    "pebble": {
+        "capabilities": [
+            "configurable"
+        ],
+        "displayName": "Power Sources",
+        "enableMultiJS": true,
+        "messageKeys": [
+            "JS_READY",
+            "COLS",
+            "ERROR",
+            "RANGE_H",
+            "END_TIME",
+            "SOLAR",
+            "BATTERY",
+            "GRID",
+            "DAY_BG",
+            "DAY_FG",
+            "NIGHT_BG",
+            "NIGHT_FG",
+            "NIGHT_MODE",
+            "NIGHT_START",
+            "DAY_START",
+            "SOC"
+        ],
+        "projectType": "native",
+        "resources": {
+            "media": []
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "emery",
+            "gabbro"
+        ],
+        "uuid": "ef398583-fe69-4567-b410-790a42219ba0",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}

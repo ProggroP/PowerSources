@@ -1,0 +1,149 @@
+[
+  {
+    "type": "heading",
+    "defaultValue": "Power Sources"
+  },
+  {
+    "type": "text",
+    "defaultValue": "Shows the power sources graph from the Home Assistant energy dashboard: solar, battery and grid, stacked like in Home Assistant, with your consumption as a line. The sensors are read from your energy dashboard, so there is nothing to pick here."
+  },
+  {
+    "type": "section",
+    "items": [
+      {
+        "type": "heading",
+        "defaultValue": "Home Assistant"
+      },
+      {
+        "type": "input",
+        "messageKey": "haUrl",
+        "label": "URL",
+        "defaultValue": "",
+        "description": "The address you open Home Assistant with, e.g. https://ha.example.org or http://192.168.1.10:8123. Your phone must be able to reach it.",
+        "attributes": {
+          "placeholder": "https://ha.example.org",
+          "type": "url",
+          "autocorrect": "off",
+          "autocapitalize": "off"
+        }
+      },
+      {
+        "type": "input",
+        "messageKey": "haToken",
+        "label": "Long-lived access token",
+        "defaultValue": "",
+        "description": "Create one in Home Assistant under your profile, Security tab. It stays on the phone and is never sent to the watch.",
+        "attributes": {
+          "placeholder": "eyJhbGciOi...",
+          "autocorrect": "off",
+          "autocapitalize": "off"
+        }
+      },
+      {
+        "type": "text",
+        "defaultValue": "The graph uses the power sensors of your energy dashboard (Settings > Dashboards > Energy): the power field of each solar, battery and grid source. Sources without one are left out. If your batteries also have a state of charge sensor there, a charge bar appears between graph and time."
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "items": [
+      {
+        "type": "heading",
+        "defaultValue": "Graph"
+      },
+      {
+        "type": "select",
+        "messageKey": "range",
+        "label": "Time span",
+        "description": "The graph always ends at the current time and reaches back this far. It refreshes every five minutes.",
+        "defaultValue": "12",
+        "options": [
+          { "label": "3 hours", "value": "3" },
+          { "label": "6 hours", "value": "6" },
+          { "label": "12 hours", "value": "12" },
+          { "label": "24 hours", "value": "24" }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "items": [
+      {
+        "type": "heading",
+        "defaultValue": "Day colours"
+      },
+      {
+        "type": "color",
+        "messageKey": "DAY_BG",
+        "label": "Background",
+        "defaultValue": "0x000000",
+        "sunlight": true
+      },
+      {
+        "type": "color",
+        "messageKey": "DAY_FG",
+        "label": "Time, axes and consumption line",
+        "defaultValue": "0xFFFFFF",
+        "sunlight": true
+      }
+    ]
+  },
+  {
+    "type": "section",
+    "items": [
+      {
+        "type": "heading",
+        "defaultValue": "Night mode"
+      },
+      {
+        "type": "toggle",
+        "messageKey": "NIGHT_MODE",
+        "label": "Use night colours",
+        "description": "Between the two times below, the watch switches to the night colours.",
+        "defaultValue": false
+      },
+      {
+        "type": "input",
+        "messageKey": "nightStart",
+        "label": "Night begins",
+        "defaultValue": "22:00",
+        "attributes": {
+          "type": "time"
+        }
+      },
+      {
+        "type": "input",
+        "messageKey": "dayStart",
+        "label": "Day begins",
+        "defaultValue": "07:00",
+        "attributes": {
+          "type": "time"
+        }
+      },
+      {
+        "type": "color",
+        "messageKey": "NIGHT_BG",
+        "label": "Background",
+        "defaultValue": "0xFFFFFF",
+        "sunlight": true
+      },
+      {
+        "type": "color",
+        "messageKey": "NIGHT_FG",
+        "label": "Time, axes and consumption line",
+        "defaultValue": "0x000000",
+        "sunlight": true
+      },
+      {
+        "type": "text",
+        "defaultValue": "If background and text colour match, the watch falls back to a legible one. The graph colours follow Home Assistant: orange for solar, green for battery, blue for grid."
+      }
+    ]
+  },
+  {
+    "type": "submit",
+    "defaultValue": "Save"
+  }
+]
